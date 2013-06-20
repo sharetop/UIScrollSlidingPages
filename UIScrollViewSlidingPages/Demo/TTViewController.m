@@ -12,9 +12,19 @@
 #import "TabTwoViewController.h"
 #import "TTSlidingPage.h"
 #import "TTSlidingPageTitle.h"
+#import "TTSlidingPagesDelegate.h"
 
-@interface TTViewController ()
-
+/*
+ 示例代码：
+ 
+ 增加事件处理，弹出提示框。
+ 
+ */
+@interface TTViewController () <TTSlidingPagesDelegate,UIAlertViewDelegate>
+{
+    BOOL isFirst;
+    BOOL isLast;
+}
 @end
 
 @implementation TTViewController
@@ -24,6 +34,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        isFirst=NO;
+        isLast=NO;
     }
     return self;
 }
@@ -35,7 +47,7 @@
     //initial setup of the TTScrollSlidingPagesController. 
     TTScrollSlidingPagesController *slider = [[TTScrollSlidingPagesController alloc] init];
 
-
+    slider.delegate=self;
     
     //set properties to customiser the slider. Make sure you set these BEFORE you access any other properties on the slider, such as the view or the datasource. Best to do it immediately after calling the init method.
     //slider.titleScrollerHidden = YES;
@@ -121,4 +133,29 @@
 //    }
 //}
 
+#pragma mark - sliding page delegate
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    isFirst=NO;
+    isLast=NO;
+}
+-(void)showMessage:(NSString*) msg
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Message" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+-(void)pageSlideToFirst:(TTScrollSlidingPagesController *)source
+{
+    if(!isFirst && !isLast){
+        isFirst=YES;
+        [self showMessage:@"To First"];
+    }
+}
+-(void)pageSlideToLast:(TTScrollSlidingPagesController *)source
+{
+    if(!isFirst && !isLast){
+        isLast=YES;
+        [self showMessage:@"To Last"];
+    }
+}
 @end

@@ -36,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26BA1D431772C2BD0023BEA4 /* TTSlidingPagesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSlidingPagesDelegate.h; sourceTree = "<group>"; };
+		26BA1D461772C4BF0023BEA4 /* TTUIScrollViewSlidingPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUIScrollViewSlidingPages.h; sourceTree = "<group>"; };
 		9F2035E31706475B00438E50 /* diagmonds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diagmonds.png; sourceTree = "<group>"; };
 		9F2035E41706475B00438E50 /* diagmonds_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diagmonds_@2X.png"; sourceTree = "<group>"; };
 		9F2035E51706475B00438E50 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
@@ -181,10 +183,12 @@
 				9F936B53170650EF001622D8 /* TTSlidingPageTitle.h */,
 				9F936B54170650EF001622D8 /* TTSlidingPageTitle.m */,
 				9F9B9BA7170387BE00CD45B4 /* TTSlidingPagesDataSource.h */,
+				26BA1D431772C2BD0023BEA4 /* TTSlidingPagesDelegate.h */,
 				9F602A65171E083F00088A9C /* TTBlackTriangle.h */,
 				9F602A66171E083F00088A9C /* TTBlackTriangle.m */,
 				9FFDC5CA1722EEA1002A5689 /* TTScrollViewWrapper.h */,
 				9FFDC5CB1722EEA1002A5689 /* TTScrollViewWrapper.m */,
+				26BA1D461772C4BF0023BEA4 /* TTUIScrollViewSlidingPages.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";

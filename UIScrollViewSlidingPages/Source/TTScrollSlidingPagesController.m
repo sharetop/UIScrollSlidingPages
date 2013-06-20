@@ -40,6 +40,7 @@
 @end
 
 @implementation TTScrollSlidingPagesController
+@synthesize delegate;
 
 /**
  Initalises the control and sets all the default values for the user-settable properties.
@@ -510,6 +511,18 @@
         topScrollView.delegate = nil;
         topScrollView.contentOffset = CGPointMake(topXPosition, 0);
         topScrollView.delegate = self;
+        
+        //sharetop
+        //只在主要的容器中增加事件回调
+        
+        if(scrollView.contentOffset.x<0 && [self.delegate respondsToSelector:@selector(pageSlideToFirst:)]){
+            
+            [self.delegate pageSlideToFirst:self];
+        }
+        else if(scrollView.contentOffset.x+self.view.bounds.size.width>scrollView.contentSize.width && [self.delegate respondsToSelector:@selector(pageSlideToLast:)]){
+            
+            [self.delegate pageSlideToLast:self];
+        }
     }
     
 }

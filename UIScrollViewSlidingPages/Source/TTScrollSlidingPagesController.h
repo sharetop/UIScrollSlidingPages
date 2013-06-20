@@ -7,6 +7,13 @@
 //
 
 /*
+ 
+ SHARETOP 2013.06.20
+ 增加delegate，处理当页面向前滚动到第一个和最后一个时的事件回调。
+ 
+ */
+
+/*
  Copyright (c) 2012 Tom Thorpe. All rights reserved.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,6 +37,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TTSlidingPagesDataSource.h"
+#import "TTSlidingPagesDelegate.h"
+
 @class TTScrollViewWrapper;
 
 @interface TTScrollSlidingPagesController : UIViewController<UIScrollViewDelegate>{
@@ -51,6 +60,8 @@
 -(int)getXPositionOfPage:(int)page;
 
 
+//sharetop
+@property (nonatomic,strong) id<TTSlidingPagesDelegate> delegate;
 
 @property (nonatomic, strong) id<TTSlidingPagesDataSource> dataSource;
 
