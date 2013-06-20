@@ -4,6 +4,12 @@ This control allows you to add multiple view controllers and have them scroll ho
 
 An example of an app using this control as it's main UI is the Tom Thorpe Photography app, available on the [App Store](https://itunes.apple.com/us/app/tom-thorpe-photography/id614901245?mt=8)
 
+Modify by SHARETOP
+---
+
+增加一个事件回调 TTSlidingPagesDelegate ，提供两项通知：在滚动到第一页时继续向前拨动，滚动到最后一页时继续向后拨动。
+这样可以在上层处理此通知，显示出左边或右边的菜单。效果类似网易新闻。
+
 Example Screenshots
 ---
 ####Video:
